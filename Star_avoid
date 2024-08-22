@@ -1,0 +1,32 @@
+public class Main {
+    public static void main(String[] args) {
+        String in = "Accen**tur*e";
+        String ans = process(in);
+        System.out.println(ans);
+    }
+
+    public static String process(String in) {
+        StringBuilder res = new StringBuilder();
+
+        for (int i = 0; i < in.length(); i++) {
+            char c = in.charAt(i);
+
+            if (c == '*') {
+                if (res.length() > 0) {
+                    res.deleteCharAt(res.length() - 1);
+                }
+            } else {
+                res.append(c);
+            }
+        }
+
+        return res.toString();
+    }
+}
+
+
+
+// input:
+// Acctue
+
+// === Code Execution Successful ===
